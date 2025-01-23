@@ -51,6 +51,8 @@ Kirigami.FormLayout {
     property bool cfg_PurityNSFW
     property bool cfg_RefreshNotification
     property bool cfg_ErrorNotification
+    property int cfg_ResolutionX: 1920
+    property int cfg_ResolutionY: 1080
 
     function refreshImage() {
         wallpaperConfiguration.RefetchSignal = !wallpaperConfiguration.RefetchSignal;
@@ -146,6 +148,48 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("API Key:")
         leftPadding: 12
         onTextChanged: cfg_APIKey = text
+    }
+
+    RowLayout {
+        id: resolutionRow
+
+        width: parent.width
+        Layout.fillWidth: true
+        Kirigami.FormData.label: i18n("Resolution:")
+
+        SpinBox {
+            id: resXInput
+
+            value: cfg_ResolutionX
+            onValueChanged: cfg_ResolutionX = value
+            stepSize: 1
+            from: 1
+            to: 15360
+            editable: true
+            textFromValue: function(value, locale) {
+                return " " + value + "px";
+            }
+            valueFromText: function(text, locale) {
+                return text.replace(/px/, '');
+            }
+        }
+
+        SpinBox {
+            id: resYInput
+
+            value: cfg_ResolutionY
+            onValueChanged: cfg_ResolutionY = value
+            stepSize: 1
+            from: 1
+            to: 15360
+            editable: true
+            textFromValue: function(value, locale) {
+                return " " + value + "px";
+            }
+            valueFromText: function(text, locale) {
+                return text.replace(/px/, '');
+            }
+        }
     }
 
     RowLayout {
