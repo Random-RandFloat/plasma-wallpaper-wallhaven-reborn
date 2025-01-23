@@ -160,7 +160,7 @@ Kirigami.FormLayout {
         SpinBox {
             id: resXInput
 
-            value: cfg_ResolutionX
+            value: root.cfg_ResolutionX
             onValueChanged: cfg_ResolutionX = value
             stepSize: 1
             from: 1
@@ -177,7 +177,7 @@ Kirigami.FormLayout {
         SpinBox {
             id: resYInput
 
-            value: cfg_ResolutionY
+            value: root.cfg_ResolutionY
             onValueChanged: cfg_ResolutionY = value
             stepSize: 1
             from: 1

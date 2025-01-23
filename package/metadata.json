@@ -3,6 +3,10 @@
     "KPlugin": {
         "Authors": [
             {
+                "Name": "RandFloat",
+                "Email": "random.randfloat@proton.me"
+            },
+            {
                 "Name": "Abubakar Yagoub",
                 "Email": "plasma@blacksuan19.dev"
             },
